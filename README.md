@@ -1,7 +1,3 @@
-
-markdown
-Copy
-Edit
 # FIRST LEGO League (FLL) Team Repository
 
 ## Repository Overview
