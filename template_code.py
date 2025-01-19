@@ -76,8 +76,6 @@ async def main():
     """
 
 
-# ---------------------------- TESTING SECTION --------------------------------
-# Allow testing of individual functions.
-
-if __name__ == "__main__":
-    runloop.run(main())
+# ---------------------------- Start The Loop --------------------------------
+# This is how the main loop starts
+runloop.run(main())
