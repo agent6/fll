@@ -22,3 +22,7 @@ This repository serves as the central hub for our FLL team's robot programming a
 ### 4. **Current Year Code File**
 - **Description**: The actively developed and maintained code for the current competition year. Includes mission-specific logic and refinements based on ongoing testing.
 - **Usage**: Update and maintain this file as the primary working code for the competition.
+
+
+Other info:
+https://tuftsceeo.github.io/SPIKEPythonDocs/SPIKE3.html
