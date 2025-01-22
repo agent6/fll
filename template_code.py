@@ -8,26 +8,23 @@
 
 # --------------------------- IMPORT STATEMENTS -------------------------------
 # Import necessary modules to interface with the SPIKE Prime hardware.
-from hub import port, motor, motor_pair, motion_sensor, sound, light_matrix, button
+from hub import port, motion_sensor
 import runloop
+import motor_pair
 import math
 
 # -------------------------- GLOBAL CONSTANTS ---------------------------------
 # Define constants for hardware configuration and key parameters.
 
 # Robot Configuration
-LEFT_MOTOR_PORT = port.A
-RIGHT_MOTOR_PORT = port.B
-WHEEL_DIAMETER_CM = 5.6  # Diameter of the wheel in centimeters
-AXLE_TRACK_CM = 12.0     # Distance between the two wheels in centimeters
+RIGHT_ATTACHMENT_MOTOR_PORT = port.A
+LEFT_ATTACHMENT_MOTOR_PORT = port.B
+RIGHT_DRIVE_MOTOR_PORT = port.C
+LEFT_DRIVE_MOTOR_PORT = port.D
 
 # Speed Settings
 DEFAULT_SPEED = 50       # Default speed for movements
 TURN_SPEED = 30          # Speed during turns
-
-# Calculated Constants
-WHEEL_CIRCUMFERENCE_CM = math.pi * WHEEL_DIAMETER_CM
-ROBOT_TURN_CIRCUMFERENCE_CM = math.pi * AXLE_TRACK_CM
 
 # --------------------------- INITIALIZATION ----------------------------------
 # Initialize motors, pair them for coordinated movement, and initialize sensors.
@@ -38,7 +35,7 @@ right_motor = motor.motor(RIGHT_MOTOR_PORT)
 motor_pair.pair(motor_pair.PAIR_1, LEFT_MOTOR_PORT, RIGHT_MOTOR_PORT)
 
 # Initialize Motion Sensor
-motion_sensor = motion_sensor.motion_sensor()
+motor_pair.pair(motor_pair.PAIR_1, RIGHT_DRIVE_MOTOR_PORT, LEFT_DRIVE_MOTOR_PORT)
 
 # ------------------------- HELPER FUNCTIONS ----------------------------------
 # Placeholder for helper functions.
@@ -53,19 +50,6 @@ def helper_function_2():
     pass
 
 # Add additional helper functions as needed.
-
-# ------------------------- MISSION-SPECIFIC LOGIC ----------------------------
-# Placeholder for mission-specific logic.
-
-async def mission_1():
-    """Placeholder for Mission 1."""
-    pass
-
-async def mission_2():
-    """Placeholder for Mission 2."""
-    pass
-
-# Add additional mission functions as needed.
 
 # ------------------------- MAIN PROGRAM STRUCTURE ----------------------------
 # Define the main sequence of operations for the robot.
